@@ -8,8 +8,45 @@
         %title= data.page.title || "Triage Documentation"
         = stylesheet_link_tag "bootstrap.min", "normalize", "all"
         = javascript_include_tag "bootstrap.min", "all"
-  .navbar-fixed-top
-    %a.brand
-      Triage
+    :css
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
   %body{:class => page_classes}
-    = yield
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Triage", "/", class: 'brand'
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                = link_to "Getting Started", "/docs/getting_started"
+    .container-fluid
+      .row-fluid
+        .span3
+          .well.sidebar-nav
+            %ul.nav.nav-list
+              %li.nav-header Getting Started
+              %li
+                %a{:href => "#overview"} Overview
+              %li
+                %a{:href => "#ruby"} Ruby
+        .span9
+          %a{ name: 'overview' }
+            %h1
+              Overview
+          = lorem.paragraphs 15
+
+          %a{ name: 'ruby' }
+            %h1
+              Ruby
+
+          = lorem.paragraphs 15
