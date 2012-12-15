@@ -6,8 +6,8 @@
       %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
         / Use title if it's in the page YAML frontmatter
         %title= data.page.title || "Triage Documentation"
-        = stylesheet_link_tag "bootstrap.min", "normalize", "all"
-        = javascript_include_tag "bootstrap.min", "all"
+        = stylesheet_link_tag "common", "bootstrap.min", "bootstrap-responsive.min"
+        = javascript_include_tag "all"
     :css
       body {
         padding-top: 60px;
@@ -16,7 +16,7 @@
       .sidebar-nav {
         padding: 9px 0;
       }
-  %body{:class => page_classes}
+  %body{ data: { spy: 'scroll', target: '.navbar' } }
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
@@ -27,26 +27,17 @@
           = link_to "Triage", "/", class: 'brand'
           .nav-collapse.collapse
             %ul.nav
-              %li.active
-                = link_to "Getting Started", "/docs/getting_started"
+              %li
+                = link_to "Overview", "#overview"
+              %li
+                = link_to "Ruby", "#ruby"
     .container-fluid
       .row-fluid
-        .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
-              %li.nav-header Getting Started
-              %li
-                %a{:href => "#overview"} Overview
-              %li
-                %a{:href => "#ruby"} Ruby
-        .span9
-          %a{ name: 'overview' }
-            %h1
-              Overview
+        .span6.offset3
+          %h1#overview
+            Overview
           = lorem.paragraphs 15
 
-          %a{ name: 'ruby' }
-            %h1
-              Ruby
-
+          %h1#ruby
+            Ruby
           = lorem.paragraphs 15
