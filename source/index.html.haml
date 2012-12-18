@@ -2,66 +2,71 @@
 title: "Triage: Incredible Support Software"
 ---
 
-.hero-unit.center
-  %h1 Triage
-  %p
-    Incredible support software that's a joy to use.
-  %p
-    %a{ href: "https://github.com/jmacdonald/triage/archive/master.zip", class: 'btn btn-primary' }
-      %i.icon-arrow-down.icon-white
-      Download Triage
-
-  %ul.index_navigation
-    %li
-      = link_to "GitHub Project", "https://github.com/jmacdonald/triage"
-    %li
-      = link_to "Documentation", "/docs/getting_started/"
-
+.splash
+  .container
+    .row
+      .span5.right
+        %img{ src: '../images/logo.png' }
+      .span7
+        %h1 Triage
+        %p
+          Incredible support software that's a joy to use.
+        %p
+          %a{ href: "https://github.com/jmacdonald/triage/archive/master.zip", class: 'btn btn-primary' }
+            Download Triage
+        %ul.index_navigation
+          %li
+            = link_to "GitHub Project", "https://github.com/jmacdonald/triage"
+          %li
+            = link_to "Documentation", "/docs/getting_started/"
+    .row
+      .span10.offset1
+        %hr
 .container
-  .row
+  .row.feature
     .span6
-      %h3 Conversation-Driven Workflow
+      %h4 Conversation-Driven Workflow
 
       Comments are an integral part of every request. It's usually the case that the initial request doesn't have enough detail. Comments allow the conversation to continue, while keeping all of the information where it belongs: with the original request.
 
-  .row
+  .row.feature
     .span6.offset6.right
-      %h3 Notifications
+      %h4 Notifications
 
       Comments, re-assignments, and status changes; users are kept up to date on a regular basis without being inundated with emails. Triage intelligently notifies users when important events occur that relate to them and their requests.
 
-  .row
+  .row.feature
     .span6
-      %h3 Twitter-Style Mentions
+      %h4 Twitter-Style Mentions
 
       Responding to a request and need to pull someone else in on the conversation? Mentions allow you to reference other users, bringing their attention to the request. They're ideal for leveraging expertise that might not be directly involved.
 
-  .row
+  .row.feature
     .span6.offset6.right
-      %h3 Auto Assignment
+      %h4 Auto Assignment
 
       Users can be associated with systems for which they're responsible and Triage will automatically assign them new requests. If more than one user is responsible for a particular system, requests will be distributed evenly. You can even set users as "unavailable" and they won't be assigned requests; a perfect solution for vacations or sick leave.
 
-  .row
+  .row.feature
     .span6
-      %h3 Attachments
+      %h4 Attachments
 
       Sometimes words just aren't enough. Images, spreadsheets and screenshots are but a few of the additional types of content that can make a request so much easier to fulfill. Triage supports attachments of any kind, right out of the box.
 
-  .row
+  .row.feature
     .span6.offset6.right
-      %h3 LDAP Support
+      %h4 LDAP Support
 
       Triage can easily integrate with your existing directory server to facilitate centralized management of passwords. Users can sign on with the same credentials as any other system setup with your directory server, making remembering varying passwords a thing of the past.
 
-  .row
+  .row.feature
     .span6
-      %h3 Beautiful User Interface
+      %h4 Beautiful User Interface
 
       Design isn't an afterthought in the development of Triage, it's a driving force. Triage has a refined and functional user interface that has been designed to reflect the underlying principles of the project itself: simplicity and elegance.
 
-  .row
+  .row.feature
     .span6.offset6.right
-      %h3 Thorough Testing
+      %h4 Thorough Testing
 
       There are over 225 tests that make up Triage's test suite, which are run every time a change is made to the project. This process makes Triage considerably more stable, and prevents new features from breaking existing functionality.
