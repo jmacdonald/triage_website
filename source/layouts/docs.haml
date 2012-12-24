@@ -28,16 +28,8 @@
           .nav-collapse.collapse
             %ul.nav
               %li
-                = link_to "Overview", "#overview"
-              %li
-                = link_to "Ruby", "#ruby"
+                = link_to "Getting Started", "#getting_started"
     .container-fluid
       .row-fluid
-        .span6.offset3
-          %h1#overview
-            Overview
-          = lorem.paragraphs 15
-
-          %h1#ruby
-            Ruby
-          = lorem.paragraphs 15
+        .span8.offset2
+          = yield
