@@ -54,7 +54,7 @@ The last step before starting Triage is to configure the database, which is hand
 
     sqlite: &sqlite
       adapter: sqlite3
-      database: db/test.sqlite3
+      database: db/<%= ENV['RAILS_ENV'] %>.sqlite3
 
     mysql: &mysql
       adapter: mysql2
@@ -84,3 +84,22 @@ The last step before starting Triage is to configure the database, which is hand
 
     test:
       <<: *defaults
+
+    production:
+      <<: *defaults
+
+If you're using SQLite, there's nothing to do. Otherwise, modify either the postgresql or mysql section with the connection details for your database. If the database is hosted on a separate server, make sure to specify a host (default is localhost).
+
+Once the database is configured, you're ready to set it up with some initial tables and seed data. Run the following command to do just that:
+
+    bundle exec rake db:setup
+
+Provided the configuration provided in `config/database.yml` is correct, the database will be setup and ready to go.
+
+#### Running the development server
+
+All that's left to do is to run the development server. While this isn't suitable for production use, it'll the database is setup correctly and that the application's dependencies have been met. We'll also need to set an environment variable telling the app in which mode (development/test/production) we want the app to run, and for which database. The default values are development/postgres, but the following command overrides both:
+
+    bundle exec rails server RAILS_ENV=production DB=mysql
+
+The development server should (after a few seconds of loading) report that it's listening on port 3000. If all goes well, visit `http://localhost:3000/` to login and use Triage!
