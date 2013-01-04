@@ -6,7 +6,7 @@
       %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
         / Use title if it's in the page YAML frontmatter
         %title= data.page.title || "Triage Documentation"
-        = stylesheet_link_tag "common", "bootstrap.min", "bootstrap-responsive.min"
+        = stylesheet_link_tag "bootstrap.min", "bootstrap-responsive.min", "common"
         = javascript_include_tag "all"
     :css
       body {
