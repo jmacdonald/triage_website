@@ -125,3 +125,98 @@ Make sure to put this in the development group (alongside the debugger gem). You
 Install nginx using your system's package manager:
 
     $ sudo apt-get install nginx
+
+Once installed, you'll need to configure nginx by modifying `/etc/nginx/nginx.conf`. Here's a good starting configuration:
+
+    worker_processes 1;
+    user nobody nogroup;
+
+    pid /tmp/nginx.pid;
+    error_log /tmp/nginx.error.log;
+
+    events {
+      worker_connections 1024; # increase if you have lots of clients
+      # Set this to on if you have more than 1 working processes
+      # This will allow only one child to watch the pollset and accept
+      # a connection to a socket
+      accept_mutex off; # "on" if nginx worker_processes > 1
+    }
+
+    http {
+      include mime.types;
+      default_type application/octet-stream;
+      access_log /tmp/nginx.access.log combined;
+
+      # This tells Nginx to ignore the contents of a file it is sending
+      # and uses the kernel sendfile instead
+      sendfile on;
+
+      # Set this to on if you have sendfile on
+      # It will prepend the HTTP response headers before
+      # calling sendfile()
+      tcp_nopush on;
+
+      # This disables the "Nagle buffering algorithm" (Nginx Docs)
+      # Good for websites that send a lot of small requests that
+      # don't need a response
+      tcp_nodelay off;
+
+      gzip on;
+      gzip_http_version 1.0;
+      gzip_proxied any;
+      gzip_min_length 500;
+      gzip_disable "MSIE [1-6]\.";
+      gzip_types text/plain text/html text/xml text/css
+                 text/comma-separated-values
+                 text/javascript application/x-javascript
+                 application/atom+xml;
+
+      upstream unicorn_server {
+       server "unix:/var/www/triage/tmp/unicorn.sock" fail_timeout=0;
+      }
+
+      server {
+        listen 80;
+        client_max_body_size 4G;
+        server_name _;
+
+        keepalive_timeout 5;
+
+        # Location of our static files
+        root "/var/www/triage/public";
+
+        location / {
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header Host $http_host;
+          proxy_redirect off;
+
+          # If you don't find the filename in the static files
+          # Then request it from the unicorn server
+          if (!-f $request_filename) {
+            proxy_pass http://unicorn_server;
+            break;
+          }
+        }
+
+        error_page 500 502 503 504 /500.html;
+        location = /500.html {
+          root "/var/www/triage/public";
+        }
+      }
+    }
+
+Change all of the references to `/var/www/triage/` if you've installed to a different path. Once this configuration is in place, (re)start nginx. Now Triage's static assets are being served and application requests will be forward to Unicorn, which we'll setup next.
+
+#### Unicorn
+
+Believe it or not, you've actually already installed Unicorn! It's specified as one of Triage's dependencies, so it's installed as part of the `bundle install` process. The only thing you need to do is edit `config/unicorn.rb` and change the `triage_directory` variable, if you've installed to a different path (note the lack of a trailing slash). Once that's complete, run the following command from the triage directory to start unicorn using the aforementioned configuration file:
+
+    $ bundle exec unicorn_rails -c config/unicorn.rb
+
+#### Initial Login and Setup
+
+At this point, Triage should be running on port 80. Point your browser to `http://your-server-ip-or-hostname/` and login using username `admin` and password `administrator`.
+
+Once logged in, the administration section can be accessed using the "Admin" link at the top right of the screen. You'll want to add other users, as well as systems (for which you provide support), and statuses (if the default open/assigned/closed don't meet your requirements).
+
+That's it! Triage is now setup and ready for production use.
