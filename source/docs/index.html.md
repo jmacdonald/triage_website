@@ -1,4 +1,4 @@
-### Getting Started
+### Installing Triage
 
 Triage is a web-based application written in Ruby on Rails. It requires a web server, database, and a recent version of Ruby.
 
@@ -46,7 +46,7 @@ The following command will install Triage's dependencies. The last 3 arguments i
 
     $ bundle install --path vendor/bundle --without development test sqlite mysql postgresql
 
-If you get errors after running this command, it's likely that you're missing development headers for one or more of the gems (libraries) used by Triage. Read the error messages, they'll give you insight into which headers you're missing.
+If you get errors after running this command, it's likely that you're missing development libraries for one or more of Triage's dependencies. Read the error messages, they'll give you insight into which ones you're missing. After installing any missing libraries, you can re-run the aforementioned `bundle install` command.
 
 #### Database Configuration
 

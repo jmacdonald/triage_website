@@ -20,11 +20,10 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
           = link_to "Triage", "/", class: 'brand'
+          %ul.nav
+            %li.active
+              = link_to "Installation", '/docs/installation/'
     .container-fluid
       .row-fluid
         .span8.offset2
