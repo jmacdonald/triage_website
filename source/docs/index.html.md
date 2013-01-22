@@ -1,4 +1,4 @@
-### Installing Triage
+### Installation
 
 Triage is a web-based application written in Ruby on Rails. It requires a web server, database, and a recent version of Ruby.
 
@@ -213,10 +213,4 @@ Believe it or not, you've actually already installed Unicorn! It's specified as 
 
     $ bundle exec unicorn_rails -c config/unicorn.rb
 
-#### Initial Login and Setup
-
-At this point, Triage should be running on port 80. Point your browser to `http://your-server-ip-or-hostname/` and login using username `admin` and password `administrator`.
-
-Once logged in, the administration section can be accessed using the "Admin" link at the top right of the screen. You'll want to add other users, as well as systems (for which you provide support), and statuses (if the default open/assigned/closed don't meet your requirements).
-
-That's it! Triage is now setup and ready for production use.
+That's it! Triage is now installed and ready for [initial setup](/docs/initial_setup/).

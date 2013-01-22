@@ -22,8 +22,10 @@
         .container-fluid
           = link_to "Triage", "/", class: 'brand'
           %ul.nav
-            %li.active
+            %li{class: ('active' if request.path == 'docs/index.html')}
               = link_to "Installation", '/docs/'
+            %li{class: ('active' if request.path == 'docs/initial_setup/index.html')}
+              = link_to "Initial Setup", '/docs/initial_setup/'
     .container-fluid
       .row-fluid
         .span8.offset2
