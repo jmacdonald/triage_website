@@ -100,6 +100,15 @@ Once the database is configured, you're ready to set it up with some initial tab
 
 Provided the configuration provided in `config/database.yml` is correct, the database will be setup and ready to go.
 
+#### LDAP
+
+If you're planning on integrating Triage with an LDAP server for authentication, you'll need to configure that as well. To enable LDAP support, you'll need to set the `ldap_enabled` flag in `config/triage.yml`:
+
+    defaults: &defaults
+      ldap_enabled: true
+
+Once that's complete, you'll need to setup `config/ldap.yml` with information relating to your LDAP server. You only need to modify the `production` section, unless you plan on contributing to Triage. Leave the `ssl` value as-is, but make sure to fill out the rest. If you're not sure what values to use, talk to your LDAP server administrator.
+
 ### Production Deployment
 
 #### Running a Development Version
