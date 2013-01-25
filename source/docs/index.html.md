@@ -30,7 +30,7 @@ Many of the libraries used by Triage have native library dependencies. Please in
 
 You can install all of these libraries in one shot using an apt-based package manager as follows (you'll only need one of the last three arguments):
 
-`sudo apt-get install make libssl-dev libxml2-dev libxslt1-dev libmysqlclient-dev libpq-dev libsqlite3-dev`
+    $ sudo apt-get install make libssl-dev libxml2-dev libxslt1-dev libmysqlclient-dev libpq-dev libsqlite3-dev
 
 ### Basic Setup
 
