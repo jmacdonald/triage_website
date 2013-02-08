@@ -4,18 +4,22 @@ At this point, Triage should be installed and running on port 80. Point your bro
 
 ## Administration
 
-The administration section can be accessed using the "Admin" link at the top right of the screen. Once in the admin section, you can get back to the main Triage interface by clicking the "Home" link at the top of the screen.
+The administration section can be accessed using the "Admin" link at the top right of the screen. Once in the admin section, you can get back to the main Triage application by clicking the "Triage" link at the top left of the screen.
 
 ### Managing Users
 
-Click the "Users" link in the navigation panel on the left side of the screen to view the list of existing users. At this point, there's only the administrator account. Click the "Add New" tab above the user listing to add a new user. Here's a rundown on the user attributes:
+#### User Types
+
+Triage supports two types of users: directory and database. Directory users are authenticated via a directory server, using LDAP (as configured in the [installation instructions](/docs/)). As a result, they don't store passwords, deferring to the directory server for password authentication. Database users have their encrypted password stored in the database, which they're able to update themselves as part of their account settings.
+
+At this point, there's only the administrator user (which is a database user). Click the "Database Users" link at the top, and then click the "New Database User" button at the top right to add a new user. Here's a rundown on the user attributes:
 
 * #### Username
 
     Used to login, as well as with Twitter-style mentions (@*username*).
 
     <p class="note">
-      The username attribute is used to bind the user in LDAP (using the attribute specified in <code>config/ldap.yml</code>).
+      The username attribute is used for binding directory users (using the attribute specified in <code>config/ldap.yml</code>).
     </p>
 
 * #### Email
@@ -44,7 +48,7 @@ Click the "Users" link in the navigation panel on the left side of the screen to
 
 * #### Password
 
-  Used for authentication purposes, although the user's LDAP password takes precendence, if LDAP is setup.
+  Used for authentication purposes; as previously mentioned, this field is not present for directory users.
 
 * #### Available
 
