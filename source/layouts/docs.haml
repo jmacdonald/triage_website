@@ -19,9 +19,15 @@
             .span3.right
               %ul
                 %li
-                  = link_to 'Installation', '/docs/installation/'
+                  - if current_page.path.include? 'installation'
+                    Installation
+                  - else
+                    = link_to 'Installation', '/docs/installation/'
                 %li
-                  = link_to 'Initial Setup', '/docs/initial_setup/'
+                  - if current_page.path.include? 'initial_setup'
+                    Initial Setup
+                  - else
+                    = link_to 'Initial Setup', '/docs/initial_setup/'
             .span3.center
               %img{ src: '/images/logo_small.png' }
       .page
