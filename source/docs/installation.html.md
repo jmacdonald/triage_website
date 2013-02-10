@@ -220,4 +220,4 @@ Believe it or not, you've actually already installed Unicorn! It's specified as 
 
     $ bundle exec unicorn_rails -c config/unicorn.rb
 
-That's it! Triage is now installed and ready for [initial setup](/docs/initial_setup/).
+### That's it! Triage is now installed and ready for [initial setup](/docs/initial_setup/).
