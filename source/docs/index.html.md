@@ -1,4 +1,7 @@
-### Installation
+---
+title: "Installation"
+---
+## Installation
 
 Triage is a web-based application written in Ruby on Rails. It requires a web server, database, and a recent version of Ruby.
 

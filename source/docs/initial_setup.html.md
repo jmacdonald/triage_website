@@ -1,8 +1,8 @@
-## Login
+## Initial Setup
 
 At this point, Triage should be installed and running on port 80. Point your browser to `http://your-server-ip-or-hostname/` and login using username `admin` and password `administrator`.
 
-## Administration
+### Administration
 
 The administration section can be accessed using the "Admin" link at the top right of the screen. Once in the admin section, you can get back to the main Triage application by clicking the "Triage" link at the top left of the screen.
 

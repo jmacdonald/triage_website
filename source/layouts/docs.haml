@@ -5,28 +5,29 @@
       / Always force latest IE rendering engine or request Chrome Frame
       %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
         / Use title if it's in the page YAML frontmatter
-        %title= data.page.title || "Triage Documentation"
-        = stylesheet_link_tag "bootstrap.min", "bootstrap-responsive.min", "common", "docs"
-        = javascript_include_tag "all"
-    :css
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-  %body{ data: { spy: 'scroll', target: '.navbar' } }
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container-fluid
-          = link_to "Triage", "/", class: 'brand'
-          %ul.nav
-            %li{class: ('active' if request.path == 'docs/index.html')}
-              = link_to "Installation", '/docs/'
-            %li{class: ('active' if request.path == 'docs/initial_setup/index.html')}
-              = link_to "Initial Setup", '/docs/initial_setup/'
-    .container-fluid
-      .row-fluid
-        .span8.offset2
-          = yield
+        %title= data.page.title || "Triage"
+        = stylesheet_link_tag "bootstrap.min", "common", "docs"
+        = javascript_include_tag "bootstrap.min", "all"
+  %body{:class => page_classes}
+    .container
+      .header
+        .container
+          .row
+            .span6
+              %h3
+                Triage Documentation
+            .span3.right
+              %ul
+                %li
+                  = link_to '/docs.html'
+
+            .span3.center
+              %img{ src: '/images/logo_small.png' }
+      .page
+        = yield
+
+        .footer
+          %hr
+          .right
+            %small
+              &copy; 2013 Jordan MacDonald
