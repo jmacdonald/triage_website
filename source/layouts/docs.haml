@@ -31,10 +31,13 @@
             .span3.center
               %img{ src: '/images/logo_small.png' }
       .page
-        = yield
+        .container
+          .row
+            .span10.offset1
+              = yield
 
-        .footer
-          %hr
-          .right
-            %small
-              &copy; 2013 Jordan MacDonald
+              .footer
+                %hr
+                .right
+                  %small
+                    &copy; 2013 Jordan MacDonald
