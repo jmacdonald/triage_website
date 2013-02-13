@@ -18,7 +18,22 @@
   margin: 25px
 
 .feature
-  margin-bottom: 80px
+  text-align: center
+
+  div
+    &:before
+      content: ' '
+      display: block
+      margin: 100px 160px
+      border-top: 1px solid #eee
+
+  &:nth-child(2)
+    div
+      &:before
+        border-top: 0px
+
+  img
+    margin-bottom: 25px
 
   .description
     margin-right: -40px

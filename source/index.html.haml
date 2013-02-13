@@ -29,84 +29,77 @@ title: "Triage: Incredible Support Software"
     .center.divider
       %img{ src: '../images/divider.png' }
 .container.page
-  .row.center
-    %h1
-      Why It's Great
-    .span8.offset2
-      %hr
-  .row.feature
-    .span6{ style: 'margin-top: 40px' }
-      %h4 Conversation-Driven Workflow
-
-      Comments are an integral part of every request. It's usually the case that the initial request doesn't have enough detail. Comments allow the conversation to continue, while keeping all of the information where it belongs: with the original request.
-    .span6
-      = image_tag "conversation.png"
-
-  .row.feature
-    .span6
-      = image_tag "notification.png", class: 'img-polaroid'
-    .span6.description{ style: 'margin-top: 60px' }
-      %h4 Notifications
-
-      Comments, re-assignments, and status changes; users are kept up to date on a regular basis without being inundated with emails. Triage intelligently notifies users when important events occur that relate to them and their requests.
-
-  .row.feature
-    .span6{ style: 'margin-top: 25px' }
-      %h4 Twitter-Style Mentions
-
-      Responding to a request and need to pull someone else in on the conversation? Mentions allow you to reference other users, bringing their attention to the request. They're ideal for leveraging expertise that might not be directly involved.
-    .span6
-      = image_tag "mention.png"
-
-  .row.feature
-    .span6
-      = image_tag "assignment.png", class: 'img-polaroid'
-    .span6.description{ style: 'margin-top: 35px' }
-      %h4 Auto Assignment
-
-      Users can be associated with systems for which they're responsible and Triage will automatically assign them new requests. If more than one user is responsible for a particular system, requests will be distributed evenly. You can even set users as "unavailable" and they won't be assigned requests; a perfect solution for vacations or sick leave.
-
-  .row.feature
-    .span6{ style: 'margin-top: 25px' }
-      %h4 Attachments
-
-      Sometimes words just aren't enough. Images, spreadsheets and screenshots are but a few of the additional types of content that can make a request so much easier to fulfill. Triage supports attachments of any kind, right out of the box.
-    .span6
-      = image_tag "attachments.png"
-
-  .row.feature
-    .span6
-      = image_tag "ldap.png", class: 'img-polaroid'
-    .span6.description{ style: 'margin-top: 45px' }
-      %h4 Directory Service Support
-
-      Triage can easily integrate with your existing directory server to facilitate centralized management of passwords. Users can sign on with the same credentials as any other system setup with your directory server, making remembering varying passwords a thing of the past.
-
-  .row.feature
-    .span6{ style: 'margin-top: 26px' }
-      %h4 Beautiful User Interface
-
-      Form follows function, so they say. Triage's user interface was built with both in mind, blending aesthetically pleasing design with a streamlined workflow. It's been designed with the ambitious goal of becoming a tool that you (and your clients) will actually <em>look forward</em> to using.
-    .span6
-      = image_tag "ui.png"
-
-  .row.feature
-    .span6
-      = image_tag "testing.png", class: 'img-polaroid'
-    .span6.description{ style: 'margin-top: 33px' }
-      %h4 Thorough Testing
-
-      There are <em>hundreds</em> of tests that make up Triage's test suite, and they're run every time a change is made to the project. This process makes Triage considerably more stable and prevents new features from breaking existing functionality.
-
-  .row.center
-    %h3
-      Convinced?
-      %a{ href: "https://github.com/jmacdonald/triage/archive/master.zip"}
-        Download Triage now!
-
-  .row.footer
+  .row
     .span10.offset1
-      %hr
-      .right
-        %small
-          &copy; 2013 Jordan MacDonald
+      .row.center
+        .span10
+          %h1
+            Why It's Great
+        .span8.offset1
+          %hr
+      .row.feature
+        .span10
+          = image_tag "conversation.png"
+          %h3 Conversation-Driven Workflow
+
+          Comments are an integral part of every request. It's usually the case that the initial request doesn't have enough detail. Comments allow the conversation to continue, while keeping all of the information where it belongs: with the original request.
+
+      .row.feature
+        .span10
+          = image_tag "notification.png", class: 'img-polaroid'
+          %h3 Notifications
+
+          Comments, re-assignments, and status changes; users are kept up to date on a regular basis without being inundated with emails. Triage intelligently notifies users when important events occur that relate to them and their requests.
+
+      .row.feature
+        .span10
+          = image_tag "mention.png"
+          %h3 Twitter-Style Mentions
+
+          Responding to a request and need to pull someone else in on the conversation? Mentions allow you to reference other users, bringing their attention to the request. They're ideal for leveraging expertise that might not be directly involved.
+
+      .row.feature
+        .span10
+          = image_tag "assignment.png", class: 'img-polaroid'
+          %h3 Auto Assignment
+
+          Users can be associated with systems for which they're responsible and Triage will automatically assign them new requests. If more than one user is responsible for a particular system, requests will be distributed evenly. You can even set users as "unavailable" and they won't be assigned requests; a perfect solution for vacations or sick leave.
+
+      .row.feature
+        .span10
+          = image_tag "attachments.png"
+          %h3 Attachments
+
+          Sometimes words just aren't enough. Images, spreadsheets and screenshots are but a few of the additional types of content that can make a request so much easier to fulfill. Triage supports attachments of any kind, right out of the box.
+
+      .row.feature
+        .span10
+          = image_tag "ldap.png", class: 'img-polaroid'
+          %h3 Directory Service Support
+
+          Triage can easily integrate with your existing directory server to facilitate centralized management of passwords. Users can sign on with the same credentials as any other system setup with your directory server, making remembering varying passwords a thing of the past.
+
+      .row.feature
+        .span10
+          = image_tag "ui.png"
+          %h3 Beautiful User Interface
+
+          Form follows function, so they say. Triage's user interface was built with both in mind, blending aesthetically pleasing design with a streamlined workflow. It's been designed with the ambitious goal of becoming a tool that you (and your clients) will actually <em>look forward</em> to using.
+
+      .row.feature
+        .span10
+          = image_tag "testing.png", class: 'img-polaroid'
+          %h3 Thorough Testing
+
+          There are <em>hundreds</em> of tests that make up Triage's test suite, and they're run every time a change is made to the project. This process makes Triage considerably more stable and prevents new features from breaking existing functionality.
+
+      .row.footer
+        .span10.center
+          %h3
+            Convinced?
+            %a{ href: "https://github.com/jmacdonald/triage/archive/master.zip"}
+              Download Triage now!
+          %hr
+          .right
+            %small
+              &copy; 2013 Jordan MacDonald
