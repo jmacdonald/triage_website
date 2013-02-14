@@ -241,4 +241,8 @@ Believe it or not, you've actually already installed Unicorn! It's specified as 
 
     $ bundle exec unicorn_rails -c config/unicorn.rb
 
-### That's it! Triage is now installed and ready for [initial setup](/docs/initial_setup/).
+<div class="conclusion center">
+  <h3>
+    That's it! Triage is now installed and ready for <a href="/docs/initial_setup/">initial setup</a>.
+  </h3>
+</div>
