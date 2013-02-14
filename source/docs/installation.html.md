@@ -105,7 +105,24 @@ Provided the configuration provided in `config/database.yml` is correct, the dat
 
 #### LDAP
 
-If you're planning on integrating Triage with an LDAP server for authentication, you'll need to setup `config/ldap.yml` with information relating to your LDAP server. You only need to modify the `production` section, unless you plan on contributing to Triage. Leave the `ssl` value as-is, but make sure to fill out the rest. If you're not sure what values to use, talk to your LDAP server administrator.
+If you're planning on integrating Triage with an LDAP server for authentication, you'll need to setup `config/ldap.yml` with information relating to your LDAP server. You only need to modify the `production` section, unless you plan on contributing to Triage. Leave the `ssl` value as-is, but make sure to fill out the rest. If you're not sure which values to use, talk to your LDAP server administrator.
+
+#### SMTP/Email
+
+In order for Triage to send notifications, it needs access to an SMTP server to relay email. The following section of the `config/environments/production.rb` file needs to be completed with the appropriate details:
+
+    # SMTP
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => 'localhost',
+      :port                 => 587,
+      :user_name            => 'triage',
+      :password             => 'password',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true
+    }
+
+In all likelihood, you'll only need to modify the `address`, `user_name`, and `password` attributes. If you're not sure which values to use, talk to your mail server administrator.
 
 ### Production Deployment
 
