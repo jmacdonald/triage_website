@@ -243,6 +243,6 @@ Believe it or not, you've actually already installed Unicorn! It's specified as 
 
 <div class="conclusion center">
   <h3>
-    That's it! Triage is now installed and ready for <a href="/docs/initial_setup/">initial setup</a>.
+    Triage is now installed and ready for <a href="/docs/initial_setup/">initial setup</a>.
   </h3>
 </div>

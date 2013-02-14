@@ -81,3 +81,9 @@ Statuses are used to signify a request's state. The default statuses are new, as
 * #### Closed
 
   When requests have been completed, or are deemed invalid, they should be closed. This allows requesters and providers to be able to distinguish which requests still require work, and which have been completed. Typical examples of statuses that have this attribute checked are "closed/fixed" and "rejected".
+
+<div class="conclusion center">
+  <h3>
+    That's it! Run into problems? Please <a href="https://github.com/jmacdonald/triage/issues?state=open">report any bugs</a>.
+  </h3>
+</div>
