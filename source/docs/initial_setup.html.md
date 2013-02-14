@@ -47,7 +47,7 @@ At this point, there's only the administrator user (which is a database user). C
     This role is meant for end-users that will need support. They can create requests, and can comment and attach/delete files to these requests. They can only read requests they've created themselves.
 
 <p class="alert alert-info">
-  Triage does not provide the ability to delete requests or comments (at least not through the user interface). This is by design; requests should be closed if they have been resolved or are no longer relevant, and deleting comments can lead to incomprehensible conversations.
+  Triage does not provide the ability to delete requests or comments (at least, not through the user interface). This is by design; requests should be closed if they have been resolved or are no longer relevant, and deleting comments can lead to incomprehensible conversations.
 </p>
 
 * #### Password
