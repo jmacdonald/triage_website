@@ -124,6 +124,10 @@ In order for Triage to send notifications, it needs access to an SMTP server to 
 
 In all likelihood, you'll only need to modify the `address`, `user_name`, and `password` attributes. If you're not sure which values to use, talk to your mail server administrator.
 
+#### Secret Token
+
+Triage uses a secret token to prevent cookie tampering. This protection can be circumvented if the token is publicly known, so it's best to override the default value. Follow the instructions in `config/initializers/secret_token.rb` to change the value and prevent cookie tampering.
+
 ### Production Deployment
 
 #### Running a Development Version
